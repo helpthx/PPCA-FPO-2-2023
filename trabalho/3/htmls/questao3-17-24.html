@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>questao3</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>questao3-17-24</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7475,7 +7475,7 @@ a.anchor-link {
 </style>
 <!-- End of mermaid configuration --></head>
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<main><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=2aeb9e80-2e03-4d74-91ec-d0ae36b01c27">
+<main><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=edffc6c3-e751-4a23-a4c3-d842204c5fd6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -7483,8 +7483,7 @@ a.anchor-link {
 <div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">utils</span> <span class="kn">import</span> <span class="n">solve_questao_3</span>
 </pre></div>
 </div>
 </div>
@@ -7497,369 +7496,39 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Quest%C3%A3o-3">Questão 3<a class="anchor-link" href="#Quest%C3%A3o-3">¶</a></h1>
+<h1 id="Quest%C3%A3o-3---Quest%C3%B5es-17-at%C3%A9-24-da-lista">Questão 3 - Questões 17 até 24 da lista<a class="anchor-link" href="#Quest%C3%A3o-3---Quest%C3%B5es-17-at%C3%A9-24-da-lista">¶</a></h1>
 </div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1d88ac6a-c9b4-4e94-bf8c-42fc7768668a">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1b40c747-f6df-4e15-b15f-05818207da7e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="1)-Entrar-os-coeficientes">1) Entrar os coeficientes<a class="anchor-link" href="#1)-Entrar-os-coeficientes">¶</a></h2>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=7b494561-2acf-44bb-9296-d6b667148eab">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">]]</span>
-<span class="n">Aineq</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'&lt;='</span><span class="p">,</span> <span class="s1">'&lt;='</span><span class="p">,</span> <span class="s1">'&gt;='</span><span class="p">]</span>
-<span class="n">B</span> <span class="o">=</span> <span class="p">[</span><span class="mi">48</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="o">-</span><span class="mi">20</span><span class="p">]</span>
-<span class="n">C</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.06</span><span class="p">,</span> <span class="mf">0.08</span><span class="p">]</span>
-<span class="n">prob</span> <span class="o">=</span> <span class="s1">'min'</span>
-<span class="n">non_negative</span> <span class="o">=</span> <span class="kc">True</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=c340d8c8-d217-40d2-a620-dd01ee17b0dc">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">formating_objective_function</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">prob</span><span class="p">,</span> <span class="n">cof</span><span class="o">=</span><span class="s1">'x'</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">prob</span> <span class="o">==</span> <span class="s2">"max"</span><span class="p">:</span>
-        <span class="n">funcao_objetiva</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"Otimização de:  </span><span class="si">{</span><span class="n">prob</span><span class="si">}</span><span class="s2"> Z = "</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="n">funcao_objetiva</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"Otimização de:  </span><span class="si">{</span><span class="n">prob</span><span class="si">}</span><span class="s2"> -Z = "</span>
-    
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">C</span><span class="p">)):</span>
-        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">funcao_objetiva</span> <span class="o">=</span> <span class="n">funcao_objetiva</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">C</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}{</span><span class="n">cof</span><span class="si">}{</span><span class="n">i</span><span class="si">}</span><span class="s2"> "</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">funcao_objetiva</span> <span class="o">=</span> <span class="n">funcao_objetiva</span> <span class="o">+</span> <span class="sa">f</span><span class="s2">"+ </span><span class="si">{</span><span class="n">C</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}{</span><span class="n">cof</span><span class="si">}{</span><span class="n">i</span><span class="si">}</span><span class="s2"> "</span>
-    <span class="k">return</span> <span class="n">funcao_objetiva</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=84f645fa-c66e-4a8c-bd04-68ce8623ffc2">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">formating_inequations</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">Aineq</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">cof</span><span class="o">=</span><span class="s1">'x'</span><span class="p">):</span>
-    <span class="n">inequacoes</span> <span class="o">=</span> <span class="s1">'Sujeito a: </span><span class="se">\n</span><span class="s1">'</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">)):</span>
-        <span class="n">inequacoes</span> <span class="o">+=</span> <span class="s1">'         '</span>
-        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">])):</span>
-            <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-                <span class="n">inequacoes</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="si">}{</span><span class="n">cof</span><span class="si">}{</span><span class="n">j</span><span class="si">}</span><span class="s2"> "</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">inequacoes</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">"+ </span><span class="si">{</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="si">}{</span><span class="n">cof</span><span class="si">}{</span><span class="n">j</span><span class="si">}</span><span class="s2"> "</span>
-        <span class="n">inequacoes</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">Aineq</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">"</span>
-                
-            
-    <span class="k">return</span> <span class="n">inequacoes</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=847b0f92-cd3d-42be-ac33-76ce7610676c">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">formating_input_coeficients</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">Aineq</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">prob</span><span class="p">,</span> <span class="n">cof</span><span class="o">=</span><span class="s1">'x'</span><span class="p">):</span>
-    <span class="n">output</span> <span class="o">=</span> <span class="s1">''</span>
-    <span class="n">objective_function</span> <span class="o">=</span> <span class="n">formating_objective_function</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">prob</span><span class="p">,</span> <span class="n">cof</span><span class="p">)</span>
-    <span class="n">inequeations</span> <span class="o">=</span> <span class="n">formating_inequations</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">Aineq</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">cof</span><span class="p">)</span>
-    <span class="n">output</span> <span class="o">=</span> <span class="n">objective_function</span> <span class="o">+</span> <span class="s1">'</span><span class="se">\n\n</span><span class="s1">'</span> <span class="o">+</span> <span class="n">inequeations</span>
-    <span class="k">return</span> <span class="n">output</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=268598a4-f19d-47c1-a71c-95f6e6a4a7ae">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Função Objetiva de entrada e restrições"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">formating_input_coeficients</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">Aineq</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">prob</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Função Objetiva de entrada e restrições
-Otimização de:  min -Z = 0.06x0 + 0.08x1 
+<h3 id="Documenta%C3%A7%C3%A3o:">Documentação:<a class="anchor-link" href="#Documenta%C3%A7%C3%A3o:">¶</a></h3><p>A&lt;List[List[int]]&gt;: Lista de inequações em formato matricial.</p>
+<p>Ained&lt;List[str]&gt;: Lista de valores de inequação em formato de lista. (i.e) Possiveis valores ['&lt;=', '&gt;=']</p>
+<p>B&lt;List[int]&gt;: Lista de restriçoes das inequações.</p>
+<p>C&lt;List[int]&gt;: Lista de coeficientes da função objetiva</p>
+<p>prob<str>: Tipo de problema de otimização. (i.e) Possiveis valores ['min', 'max']</str></p>
+<h3 id="Exemplos-de-preencimento:">Exemplos de preencimento:<a class="anchor-link" href="#Exemplos-de-preencimento:">¶</a></h3><p>Para o seguinte problema 17 temos que:</p>
+<p>Minimizar: $X = 0.06x1 + 0.08x2$</p>
+<p>Sujeito a:
+$8x1 + 6x2 &gt;= 48$</p>
+<pre><code>$x1 + 2x2 &gt;= 12$
 
-Sujeito a: 
-         8x0 + 6x1 &lt;= 48 
-         1x0 + 2x1 &lt;= 12 
-         -1x0 + -2x1 &gt;= -20 
-
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cbe7e3fd-520d-4e48-9400-42d9402d667f">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="a)-Forma-Canonica">a) Forma Canonica<a class="anchor-link" href="#a)-Forma-Canonica">¶</a></h2>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=423105e8-b737-45fa-bb95-f65dcfa56a14">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="c1"># A = [[8,6],[1,2], [-1,-2]]</span>
-<span class="c1"># Aineq = ['&lt;=', '&lt;=', '&gt;=']</span>
-<span class="c1"># B = [48, 12, -20]</span>
-<span class="c1"># C = [0.06, 0.08]</span>
-<span class="c1"># prob = 'min'</span>
-<span class="c1"># non_negative = True</span>
+$x1 + 2x2 &lt;= 20$</code></pre>
+<p>Tal que:
+$x1, x2 &gt;= 0$</p>
+<p>Deve-se preencher da seguinte forma:</p>
+<div class="highlight"><pre><span></span><span class="go">A = [[8,6],[1,2], [1,2]]</span>
+<span class="go">Aineq = ['&lt;=', '&lt;=', '&gt;=']</span>
+<span class="go">B = [48, 12, 20]</span>
+<span class="go">C = [0.06, 0.08]</span>
+<span class="go">prob = 'min'</span>
+<span class="go">non_negative = True</span>
 </pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=91afe294-3e4b-4c31-b6bc-e355f5542335">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">transforming_canonic_form</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">Aineq</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">prob</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">prob</span> <span class="o">==</span> <span class="s1">'max'</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">Aineq</span><span class="p">)):</span>
-            <span class="k">if</span> <span class="n">Aineq</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">'&lt;='</span><span class="p">:</span>
-                <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">])):</span>
-                    <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">*-</span><span class="mi">1</span>
-                <span class="n">Aineq</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'&lt;='</span>
-                <span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*-</span><span class="mi">1</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">C</span><span class="p">)):</span>
-            <span class="n">C</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">C</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span>
-                       
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">Aineq</span><span class="p">)):</span>
-            <span class="k">if</span> <span class="n">Aineq</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">'&gt;='</span><span class="p">:</span>
-                <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">])):</span>
-                    <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">A</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">*-</span><span class="mi">1</span>
-                <span class="n">Aineq</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'&gt;='</span>
-                <span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">B</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*-</span><span class="mi">1</span>
-    <span class="k">return</span> <span class="n">A</span><span class="p">,</span> <span class="n">Aineq</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">prob</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=8c6677da-4d7f-4794-96eb-c2f92ac67e32">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [17]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">A</span><span class="p">,</span> <span class="n">Aineq</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">prob</span> <span class="o">=</span> <span class="n">transforming_canonic_form</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">Aineq</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">prob</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=023aaee3-8f90-46a3-9643-a0ade9a0e3ab">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [18]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">formating_input_coeficients</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">Aineq</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">prob</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Otimização de:  min -Z = -0.06x0 + -0.08x1 
-
-Sujeito a: 
-         -8x0 + -6x1 &gt;= -48 
-         -1x0 + -2x1 &gt;= -12 
-         -1x0 + -2x1 &gt;= -20 
-
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3bccb249-5878-4347-9a2b-8947414c3166">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="b)-Forma-dual">b) Forma dual<a class="anchor-link" href="#b)-Forma-dual">¶</a></h2>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e470611b-472d-45b1-bfac-1a4353976cff">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [19]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">transforming_dual_form</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">Aineq</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">prob</span><span class="p">):</span>
-    <span class="n">At</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">A</span><span class="p">)))</span>
-    <span class="n">Bt</span> <span class="o">=</span> <span class="n">C</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-    <span class="n">Ct</span> <span class="o">=</span> <span class="n">B</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-    
-    <span class="k">if</span> <span class="n">prob</span> <span class="o">==</span> <span class="s2">"max"</span><span class="p">:</span>
-        <span class="n">prob</span> <span class="o">=</span> <span class="s2">"min"</span>
-        <span class="n">Aineq</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"&gt;="</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">Bt</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span> 
-        <span class="n">prob</span> <span class="o">=</span> <span class="s2">"max"</span>
-        <span class="n">Aineq</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"&lt;="</span><span class="p">]</span><span class="o">*</span><span class="nb">len</span><span class="p">(</span><span class="n">Bt</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="n">At</span><span class="p">,</span> <span class="n">Aineq</span><span class="p">,</span> <span class="n">Bt</span><span class="p">,</span> <span class="n">Ct</span><span class="p">,</span> <span class="n">prob</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=4d7e203d-6ebe-4128-af71-dd106eac4a39">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [20]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">At</span><span class="p">,</span> <span class="n">Aineq</span><span class="p">,</span> <span class="n">Bt</span><span class="p">,</span> <span class="n">Ct</span><span class="p">,</span> <span class="n">prob</span> <span class="o">=</span> <span class="n">transforming_dual_form</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">Aineq</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">prob</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=66889322-374f-4b0a-a48d-c2aa2a4a281e">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [21]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">formating_input_coeficients</span><span class="p">(</span><span class="n">At</span><span class="p">,</span> <span class="n">Aineq</span><span class="p">,</span> <span class="n">Bt</span><span class="p">,</span> <span class="n">Ct</span><span class="p">,</span> <span class="n">prob</span><span class="p">,</span> <span class="s2">"y"</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Otimização de:  max Z = -48y0 + -12y1 + -20y2 
-
-Sujeito a: 
-         -8y0 + -1y1 + -1y2 &lt;= -0.06 
-         -6y0 + -2y1 + -2y2 &lt;= -0.08 
-
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=9d03fe32-d3b4-4e12-ade7-3b049bc043e1">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [36]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">solve_questao_3</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">Aineq</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">prob</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"a - Mostrando problema de entrada </span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">formating_input_coeficients</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">Aineq</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">prob</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n\n</span><span class="s2">"</span><span class="p">)</span>
-    <span class="n">A</span><span class="p">,</span> <span class="n">Aineq</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">prob</span> <span class="o">=</span> <span class="n">transforming_canonic_form</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">Aineq</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">prob</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"b - Transformando em formato canonico </span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">formating_input_coeficients</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">Aineq</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">prob</span><span class="p">))</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n\n</span><span class="s2">"</span><span class="p">)</span>
-    <span class="n">At</span><span class="p">,</span> <span class="n">Aineq</span><span class="p">,</span> <span class="n">Bt</span><span class="p">,</span> <span class="n">Ct</span><span class="p">,</span> <span class="n">prob</span> <span class="o">=</span> <span class="n">transforming_dual_form</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">Aineq</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">prob</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">"c - Transformando em formato dual </span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">formating_input_coeficients</span><span class="p">(</span><span class="n">At</span><span class="p">,</span> <span class="n">Aineq</span><span class="p">,</span> <span class="n">Bt</span><span class="p">,</span> <span class="n">Ct</span><span class="p">,</span> <span class="n">prob</span><span class="p">,</span> <span class="s2">"y"</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0538d80d-8721-4a4d-94cf-88b8f3cbad48">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="d)-Aplicar-nos-problemas-17-a-24-e-26-a-32">d) Aplicar nos problemas 17 a 24 e 26 a 32<a class="anchor-link" href="#d)-Aplicar-nos-problemas-17-a-24-e-26-a-32">¶</a></h2>
 </div>
 </div>
 </div>
@@ -7879,7 +7548,7 @@ Sujeito a:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [28]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [2]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]]</span>
@@ -7893,26 +7562,15 @@ Sujeito a:
 </div>
 </div>
 </div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=014b97d0-5463-4d33-be0b-45fde991491d">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Formantando-o-problema">Formantando o problema<a class="anchor-link" href="#Formantando-o-problema">¶</a></h4>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=da82d915-03ec-4f6f-9e71-c9779fa5b7d6">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0d1b1682-50d6-4a2e-b3b7-9041257247c1">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [29]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">formating_input_coeficients</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">Aineq</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">prob</span><span class="p">))</span>
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">solve_questao_3</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">Aineq</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">prob</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -7925,133 +7583,37 @@ Sujeito a:
 <div class="jp-OutputArea-child">
 <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Função Objetiva de entrada e restrições
+<pre>a - Mostrando problema de entrada 
 
-Otimização de:  min -Z = 0.06x0 + 0.08x1 
-
-Sujeito a: 
-         8x0 + 6x1 &lt;= 48 
-         1x0 + 2x1 &lt;= 12 
-         1x0 + 2x1 &gt;= 20 
-
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=c6101cdb-2ff1-49f6-bfae-febf4f54ac20">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Transformando-em-forma-canonica">Transformando em forma canonica<a class="anchor-link" href="#Transformando-em-forma-canonica">¶</a></h4>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=52c08a3b-e59c-41a5-a908-a51e94681709">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">A</span><span class="p">,</span> <span class="n">Aineq</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">prob</span> <span class="o">=</span> <span class="n">transforming_canonic_form</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">Aineq</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">prob</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=96ccaaca-2cac-48e5-81f6-0d4fe7a82a3b">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Problema em formato canonico"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">formating_input_coeficients</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">Aineq</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">prob</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Problema em formato canonico
-Otimização de:  min -Z = -0.06x0 + -0.08x1 
+Otimização de:  min Z = 0.06Z0 + 0.08Z1 
 
 Sujeito a: 
-         -8x0 + -6x1 &gt;= -48 
-         -1x0 + -2x1 &gt;= -12 
-         1x0 + 2x1 &gt;= 20 
+         8Z0 + 6Z1 &lt;= 48 
+         1Z0 + 2Z1 &lt;= 12 
+         1Z0 + 2Z1 &gt;= 20 
 
-</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=1544ba22-4a0a-4b08-8a9c-6e10dc81ec63">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h4 id="Transformando-na-forma-dual">Transformando na forma dual<a class="anchor-link" href="#Transformando-na-forma-dual">¶</a></h4>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=0d1b1682-50d6-4a2e-b3b7-9041257247c1">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [32]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="n">At</span><span class="p">,</span> <span class="n">Aineq</span><span class="p">,</span> <span class="n">Bt</span><span class="p">,</span> <span class="n">Ct</span><span class="p">,</span> <span class="n">prob</span> <span class="o">=</span> <span class="n">transforming_dual_form</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">Aineq</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">prob</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=d0bd69aa-1508-4055-9692-68732d02b85a">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [33]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"Problema em formato dual"</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">formating_input_coeficients</span><span class="p">(</span><span class="n">At</span><span class="p">,</span> <span class="n">Aineq</span><span class="p">,</span> <span class="n">Bt</span><span class="p">,</span> <span class="n">Ct</span><span class="p">,</span> <span class="n">prob</span><span class="p">,</span> <span class="s2">"y"</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-</div>
-</div>
-<div class="jp-Cell-outputWrapper">
-<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
-</div>
-<div class="jp-OutputArea jp-Cell-outputArea">
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Problema em formato dual
-Otimização de:  max Z = -48y0 + -12y1 + 20y2 
+
+
+
+b - Transformando em formato canonico 
+
+Otimização de:  min Z = 0.06Z0 + 0.08Z1 
 
 Sujeito a: 
-         -8y0 + -1y1 + 1y2 &lt;= -0.06 
-         -6y0 + -2y1 + 2y2 &lt;= -0.08 
+         -8Z0 + -6Z1 &gt;= -48 
+         -1Z0 + -2Z1 &gt;= -12 
+         1Z0 + 2Z1 &gt;= 20 
+
+
+
+
+c - Transformando em formato dual 
+
+Otimização de:  max D = -48y0 + -12y1 + 20y2 
+
+Sujeito a: 
+         -8y0 + -1y1 + 1y2 &lt;= 0.06 
+         -6y0 + -2y1 + 2y2 &lt;= 0.08 
 
 </pre>
 </div>
@@ -8074,7 +7636,7 @@ Sujeito a:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [35]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [4]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">]]</span>
@@ -8093,7 +7655,7 @@ Sujeito a:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [37]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">solve_questao_3</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">Aineq</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">prob</span><span class="p">)</span>
@@ -8111,33 +7673,33 @@ Sujeito a:
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>a - Mostrando problema de entrada 
 
-Otimização de:  max Z = 2x0 + 1x1 
+Otimização de:  max Z = 2Z0 + 1Z1 
 
 Sujeito a: 
-         6x0 + 3x1 &lt;= 480 
-         6x0 + 3x1 &gt;= 450 
-         2x0 + 4x1 &lt;= 480 
-         2x0 + 4x1 &gt;= 450 
+         6Z0 + 3Z1 &lt;= 480 
+         6Z0 + 3Z1 &gt;= 450 
+         2Z0 + 4Z1 &lt;= 480 
+         2Z0 + 4Z1 &gt;= 450 
 
 
 
 
 b - Transformando em formato canonico 
 
-Otimização de:  max Z = 2x0 + 1x1 
+Otimização de:  max Z = 2Z0 + 1Z1 
 
 Sujeito a: 
-         6x0 + 3x1 &lt;= 480 
-         -6x0 + -3x1 &lt;= -450 
-         2x0 + 4x1 &lt;= 480 
-         -2x0 + -4x1 &lt;= -450 
+         6Z0 + 3Z1 &lt;= 480 
+         -6Z0 + -3Z1 &lt;= -450 
+         2Z0 + 4Z1 &lt;= 480 
+         -2Z0 + -4Z1 &lt;= -450 
 
 
 
 
 c - Transformando em formato dual 
 
-Otimização de:  min -Z = 480y0 + -450y1 + 480y2 + -450y3 
+Otimização de:  min D = 480y0 + -450y1 + 480y2 + -450y3 
 
 Sujeito a: 
          6y0 + -6y1 + 2y2 + -2y3 &gt;= 2 
@@ -8164,7 +7726,7 @@ Sujeito a:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [38]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">7</span><span class="p">]]</span>
@@ -8183,7 +7745,7 @@ Sujeito a:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [7]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">solve_questao_3</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">Aineq</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">prob</span><span class="p">)</span>
@@ -8201,29 +7763,29 @@ Sujeito a:
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>a - Mostrando problema de entrada 
 
-Otimização de:  max Z = 60x0 + 40x1 
+Otimização de:  max Z = 60Z0 + 40Z1 
 
 Sujeito a: 
-         10x0 + 10x1 &lt;= 100 
-         3x0 + 7x1 &lt;= 42 
+         10Z0 + 10Z1 &lt;= 100 
+         3Z0 + 7Z1 &lt;= 42 
 
 
 
 
 b - Transformando em formato canonico 
 
-Otimização de:  max Z = 60x0 + 40x1 
+Otimização de:  max Z = 60Z0 + 40Z1 
 
 Sujeito a: 
-         10x0 + 10x1 &lt;= 100 
-         3x0 + 7x1 &lt;= 42 
+         10Z0 + 10Z1 &lt;= 100 
+         3Z0 + 7Z1 &lt;= 42 
 
 
 
 
 c - Transformando em formato dual 
 
-Otimização de:  min -Z = 100y0 + 42y1 
+Otimização de:  min D = 100y0 + 42y1 
 
 Sujeito a: 
          10y0 + 3y1 &gt;= 60 
@@ -8234,7 +7796,355 @@ Sujeito a:
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=33636c3d-9867-4f60-9cf8-4d5307a58021">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Quest%C3%A3o-20">Questão 20<a class="anchor-link" href="#Quest%C3%A3o-20">¶</a></h3>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=89d84bce-8fbc-498a-afad-a3f74b5733c3">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">]]</span>
+<span class="n">Aineq</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'&gt;='</span><span class="p">,</span> <span class="s1">'&gt;='</span><span class="p">]</span>
+<span class="n">B</span> <span class="o">=</span> <span class="p">[</span><span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
+<span class="n">C</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">16</span><span class="p">]</span>
+<span class="n">prob</span> <span class="o">=</span> <span class="s1">'min'</span>
+<span class="n">non_negative</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f42f2ebf-db3d-4525-8e39-5935e2265cbc">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">solve_questao_3</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">Aineq</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">prob</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>a - Mostrando problema de entrada 
+
+Otimização de:  min Z = 10Z0 + 16Z1 
+
+Sujeito a: 
+         1Z0 + 2Z1 &gt;= 40 
+         2Z0 + 5Z1 &gt;= 50 
+
+
+
+
+b - Transformando em formato canonico 
+
+Otimização de:  min Z = 10Z0 + 16Z1 
+
+Sujeito a: 
+         1Z0 + 2Z1 &gt;= 40 
+         2Z0 + 5Z1 &gt;= 50 
+
+
+
+
+c - Transformando em formato dual 
+
+Otimização de:  max D = 40y0 + 50y1 
+
+Sujeito a: 
+         1y0 + 2y1 &lt;= 10 
+         2y0 + 5y1 &lt;= 16 
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=a4223928-fd39-47a1-a643-53eac02900d1">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Quest%C3%A3o-22">Questão 22<a class="anchor-link" href="#Quest%C3%A3o-22">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=4c1eebfb-76e6-41b8-8ea1-e224b294c81d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [10]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">],[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]]</span>
+<span class="n">Aineq</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'&lt;='</span><span class="p">,</span> <span class="s1">'&lt;='</span><span class="p">,</span> <span class="s1">'&lt;='</span><span class="p">]</span>
+<span class="n">B</span> <span class="o">=</span> <span class="p">[</span><span class="mi">500</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">C</span> <span class="o">=</span> <span class="p">[</span><span class="mi">120</span><span class="p">,</span> <span class="mi">80</span><span class="p">]</span>
+<span class="n">prob</span> <span class="o">=</span> <span class="s1">'max'</span>
+<span class="n">non_negative</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ee5e6645-5f0b-4c17-9e9a-49616b73d4dd">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [11]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">solve_questao_3</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">Aineq</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">prob</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>a - Mostrando problema de entrada 
+
+Otimização de:  max Z = 120Z0 + 80Z1 
+
+Sujeito a: 
+         20Z0 + 10Z1 &lt;= 500 
+         1Z0 + 0Z1 &lt;= 40 
+         0Z0 + 1Z1 &lt;= 10 
+
+
+
+
+b - Transformando em formato canonico 
+
+Otimização de:  max Z = 120Z0 + 80Z1 
+
+Sujeito a: 
+         20Z0 + 10Z1 &lt;= 500 
+         1Z0 + 0Z1 &lt;= 40 
+         0Z0 + 1Z1 &lt;= 10 
+
+
+
+
+c - Transformando em formato dual 
+
+Otimização de:  min D = 500y0 + 40y1 + 10y2 
+
+Sujeito a: 
+         20y0 + 1y1 + 0y2 &gt;= 120 
+         10y0 + 0y1 + 1y2 &gt;= 80 
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b1e51fd6-0107-40ed-b91f-b56c9179dfb7">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Quest%C3%A3o-23">Questão 23<a class="anchor-link" href="#Quest%C3%A3o-23">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=219d1680-6587-4a02-b080-c948a55e08b1">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [12]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">]]</span>
+<span class="n">Aineq</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'&gt;='</span><span class="p">,</span> <span class="s1">'&gt;='</span><span class="p">]</span>
+<span class="n">B</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
+<span class="n">C</span> <span class="o">=</span> <span class="p">[</span><span class="mi">14</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
+<span class="n">prob</span> <span class="o">=</span> <span class="s1">'min'</span>
+<span class="n">non_negative</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=ab858d1f-e998-4c05-b17b-ec02c5a331d0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [13]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">solve_questao_3</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">Aineq</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">prob</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>a - Mostrando problema de entrada 
+
+Otimização de:  min Z = 14Z0 + 20Z1 
+
+Sujeito a: 
+         1Z0 + 2Z1 &gt;= 4 
+         7Z0 + 6Z1 &gt;= 20 
+
+
+
+
+b - Transformando em formato canonico 
+
+Otimização de:  min Z = 14Z0 + 20Z1 
+
+Sujeito a: 
+         1Z0 + 2Z1 &gt;= 4 
+         7Z0 + 6Z1 &gt;= 20 
+
+
+
+
+c - Transformando em formato dual 
+
+Otimização de:  max D = 4y0 + 20y1 
+
+Sujeito a: 
+         1y0 + 7y1 &lt;= 14 
+         2y0 + 6y1 &lt;= 20 
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=f0f5e6fc-d87b-4799-aab0-95d133e7a9c1">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h3 id="Quest%C3%A3o-24">Questão 24<a class="anchor-link" href="#Quest%C3%A3o-24">¶</a></h3>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=c34046be-404c-491f-9fbe-a83f0574792d">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [14]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">A</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> <span class="p">[</span><span class="mi">8</span><span class="p">,</span> <span class="mi">20</span><span class="p">]]</span>
+<span class="n">Aineq</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'&lt;='</span><span class="p">,</span> <span class="s1">'&lt;='</span><span class="p">,</span> <span class="s1">'&lt;='</span><span class="p">]</span>
+<span class="n">B</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
+<span class="n">C</span> <span class="o">=</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">75</span><span class="p">]</span>
+<span class="n">prob</span> <span class="o">=</span> <span class="s1">'max'</span>
+<span class="n">non_negative</span> <span class="o">=</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=0d568db0-9f97-4fec-ac9f-a6f789a75630">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In [15]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="cm-editor cm-s-jupyter">
+<div class="highlight hl-ipython3"><pre><span></span><span class="n">solve_questao_3</span><span class="p">(</span><span class="n">A</span><span class="p">,</span> <span class="n">Aineq</span><span class="p">,</span> <span class="n">B</span><span class="p">,</span> <span class="n">C</span><span class="p">,</span> <span class="n">prob</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>a - Mostrando problema de entrada 
+
+Otimização de:  max Z = 50Z0 + 75Z1 
+
+Sujeito a: 
+         4Z0 + 0Z1 &lt;= 12 
+         4Z0 + 8Z1 &lt;= 20 
+         8Z0 + 20Z1 &lt;= 50 
+
+
+
+
+b - Transformando em formato canonico 
+
+Otimização de:  max Z = 50Z0 + 75Z1 
+
+Sujeito a: 
+         4Z0 + 0Z1 &lt;= 12 
+         4Z0 + 8Z1 &lt;= 20 
+         8Z0 + 20Z1 &lt;= 50 
+
+
+
+
+c - Transformando em formato dual 
+
+Otimização de:  min D = 12y0 + 20y1 + 50y2 
+
+Sujeito a: 
+         4y0 + 4y1 + 8y2 &gt;= 50 
+         0y0 + 8y1 + 20y2 &gt;= 75 
+
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=53f1cd62-6a96-43c3-ac8d-7dc877968bbf">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
