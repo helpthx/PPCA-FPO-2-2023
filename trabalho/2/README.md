@@ -68,6 +68,9 @@ $ cd frontend
 $ uvicorn main:app --reload
 ```
 
+Resultado esperado:
+![Exemplo de run](img/run.png "Exemplo de run")
+
 ## Frontend
 
 ### Descrição
@@ -92,7 +95,7 @@ Esta API fornece uma maneira de gerar as respostas da questão 2 utitilizando um
 
 curl -X GET http://127.0.0.1:8000/docs#
 
-![Exemplo da url de docs](/img/docs.png "Exemplo da url de docs")
+![Exemplo da url de docs](img/docs.png "Exemplo da url de docs")
 
 
 #### GET /docs#/default/b_2_post
@@ -109,7 +112,7 @@ curl -X GET http://127.0.0.1:8000/docs#
 
 curl -X GET http://127.0.0.1:8000//docs#/default/b_2_post
 
-![Exemplo da url de docs](/img/docs.png "Exemplo da url de docs")
+![Exemplo da url de url2B.png](img/url2B.png "Exemplo da url de url2B.png")
 
 
 ## Exemplos para a Questão 24 da Lista
@@ -154,23 +157,23 @@ curl -X 'POST' \
 ```
 
 Exemplos de entrada na url com a imagem de exemplo
-![Exemplo de input de entrada para a questão 24](/img/expected_input.png "Exemplo de input de entrada para a questão 24")
+![Exemplo de input de entrada para a questão 24](img/expected_input.png "Exemplo de input de entrada para a questão 24")
 
 ### Output na API 
 
 Deve-se capturar a resposa escrita da API pelo header.results (i.e):
 ```JSON
  {
-    1: Funcao Objetiva: Otimizacao de:  min Z = -50x + -75y, Sujeito a: -4x + 0y >= -12, -4x + -8y >= -20, -8x + -20y >= -50, Tal que: x,y >= 0,
+    "1": "Funcao Objetiva: Otimizacao de:  min Z = -50x + -75y, Sujeito a: -4x + 0y >= -12, -4x + -8y >= -20, -8x + -20y >= -50, Tal que: x,y >= 0",
  
-    2: Pontos factiveis: [[3.0,1.0],[3.0,0.0],[0.0,0.0],[0.0,2.5]],
+    "2": "Pontos factiveis: [[3.0,1.0],[3.0,0.0],[0.0,0.0],[0.0,2.5]]",
  
-    5: Possiveis valores para funcao objetiva: Z = -50x + -75y temos, Z(3.0,1.0) = -225.0, Z(3.0,0.0) = -150.0, Z(0.0,0.0) = -0.0, Z(0.0,2.5) = -187.5,
+    "5": "Possiveis valores para funcao objetiva: Z = -50x + -75y temos, Z(3.0,1.0) = -225.0, Z(3.0,0.0) = -150.0, Z(0.0,0.0) = -0.0, Z(0.0,2.5) = -187.5",
  
-    6: Valor otimo para funcao objetiva: O valor minimo da zona factivel é 225.0 encontrado no ponto Z(3.0,1.0)}
+    "6": "Valor otimo para funcao objetiva: O valor minimo da zona factivel é 225.0 encontrado no ponto Z(3.0,1.0)}"
  ```
 Exemplo de saida esperada e como interpretar a saida
-![Exemplo de output de entrada para a questão 24](/img/expected_output.png "Exemplo de output de entrada para a questão 24")
+![Exemplo de output de entrada para a questão 24](img/expected_output.png "Exemplo de output de entrada para a questão 24")
 
 ## Open Source [![Open Source ](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
