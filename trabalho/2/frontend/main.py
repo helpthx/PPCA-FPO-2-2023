@@ -32,19 +32,3 @@ async def b(data: IntList):
                "6": f"Valor otimo para funcao objetiva: {str(output_6)}"}
     
     return  FileResponse('/home/jvrbaptista/Documents/mestrado/FPO/PPCA-FPO-2-2023/trabalho/2/frontend/Solução.png', headers=results)
-
-
-# from fastapi.responses import FileResponse
-
-# @app.get("/teste")
-# async def main():
-#     return [FileResponse("/home/jvrbaptista/Documents/mestrado/FPO/trabalho/2/images/teste.jpeg"),
-#             FileResponse("/home/jvrbaptista/Documents/mestrado/FPO/trabalho/2/images/car.jpeg")]
-
-@app.post("/ImgAndJSON")
-# Postmsg is a Pydantic model having 1 str field
-def ImgAndJSON():
-
-    results={"message":"This is just test message"}
-
-    return FileResponse('/home/jvrbaptista/Documents/mestrado/FPO/PPCA-FPO-2-2023/trabalho/2/perfil.jpeg', headers=results)
