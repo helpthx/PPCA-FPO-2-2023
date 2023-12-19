@@ -1,20 +1,6 @@
 # Questão 2 do trabalho de FPO PPCA 2/2023
 
-### Disciplina: Fundamentos em Pesquisa Operacional – 2023/2 
-### Professor: Dr.  Peng Yaohao
-
-## Integrantes
-
-| Nome               | Matrícula  | GitHub             |
-|--------------------|------------|--------------------|
-| João Baptista     | 232103489 | @helpthx         |
-| João Fonseca     | 232103460 |          |
-
-## Organização
-
-
 ## Instação
-
 
 Passo a passo para instalação de requisitos Python usando pip e requirements.txt
 
