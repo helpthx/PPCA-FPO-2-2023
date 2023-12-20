@@ -11,13 +11,14 @@
 ## Organização
 
 Os trabalhos se encontram na pasta /trabalho.
-O presente repositorio possui os recursos para as questões 2 e 3 do trabalho de FPO.
+O presente repositorio possui os recursos para as questões 2, 3 e 12 do trabalho de FPO.
 
 * /notebooks - Fica todos os recursos de jupyter notebook utilizados para rodar em python
 * /htmls - Ficam todos os resultados dos notebooks salvos em formato livre .html
 * /frontend - Na questao 2 é onde fica a implementação da API de frontend usada para interagir com com a questao 2 - (b).
 * /img - Usado para guardar as imagens da documentação.
 * utils.py - Arquivo python que organiza as funções criadas para resolver as questões. 
+* /imagens - Estão as imagens de calculos da questão 12 item a)
 
 ## Open Source [![Open Source ](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
