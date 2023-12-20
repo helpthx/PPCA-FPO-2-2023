@@ -68,11 +68,11 @@ def transforming_dual_form(A, Aineq, B, C, prob):
 
 def solve_questao_3(A, Aineq, B, C, prob):
     print("a - Mostrando problema de entrada \n")
-    print(formating_input_coeficients(A, Aineq, B, C, prob, "Z"))
+    print(formating_input_coeficients(A, Aineq, B, C, prob, "x", "Z"))
     print("\n\n")
     A, Aineq, B, C, prob = transforming_canonic_form(A, Aineq, B, C, prob)
     print("b - Transformando em formato canonico \n")
-    print(formating_input_coeficients(A, Aineq, B, C, prob, "Z"))
+    print(formating_input_coeficients(A, Aineq, B, C, prob, "x", "Z"))
     print("\n\n")
     At, Aineq, Bt, Ct, prob = transforming_dual_form(A, Aineq, B, C, prob)
     print("c - Transformando em formato dual \n")

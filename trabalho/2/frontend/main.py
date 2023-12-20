@@ -31,4 +31,4 @@ async def b(data: IntList):
                "5": f"Possiveis valores para funcao objetiva: {str(output_5)}",
                "6": f"Valor otimo para funcao objetiva: {str(output_6)}"}
     
-    return  FileResponse('/home/jvrbaptista/Documents/mestrado/FPO/PPCA-FPO-2-2023/trabalho/2/frontend/Solução.png', headers=results)
+    return  FileResponse('./Solução.png', headers=results)
